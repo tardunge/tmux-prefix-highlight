@@ -92,7 +92,7 @@ main() {
         local -r fallback="$empty_mode"
     fi
 
-    local -r highlight="#{?client_prefix,$prefix_mode,$fallback}#[default]"
+    local -r highlight="#{?client_prefix,$prefix_mode,$fallback}"
 
     local -r status_left_value="$(tmux_option "status-left")"
     tmux set-option -gq "status-left" "${status_left_value/$place_holder/$highlight}"
